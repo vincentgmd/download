@@ -56,6 +56,7 @@ import qualified Text.HTML.TagSoup    as TagSoup
 import qualified Text.XML.Light       as XML
 import qualified Text.Feed.Import     as Feed
 import qualified Text.Feed.Types      as Feed
+import System.IO.Unsafe (unsafePerformIO)
 
 #include "download.h"
 
@@ -142,6 +143,7 @@ data URL_
 -- detailed in RFC1738.
 --
 
+{-# NOINLINE parseURL #-}
 parseURL :: String -> Maybe URL
 parseURL s = unsafePerformIO $ withCString s $ \cstr -> do
     p <- c_parseURL cstr
