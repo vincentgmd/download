@@ -42,7 +42,7 @@ import Foreign.C.String
 
 import qualified Foreign.Concurrent as C
 -- import Control.Monad
-import Control.Monad.Instances ()
+-- import Control.Monad.Instances ()
 -- import Data.Word
 -- import System.IO
 -- import System.IO.Unsafe
@@ -143,7 +143,6 @@ data URL_
 -- detailed in RFC1738.
 --
 
-{-# NOINLINE parseURL #-}
 parseURL :: String -> Maybe URL
 parseURL s = unsafePerformIO $ withCString s $ \cstr -> do
     p <- c_parseURL cstr
