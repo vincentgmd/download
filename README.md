@@ -17,7 +17,7 @@ import Network.Download
  Loading a webpage as a `ByteString`:
 
 ``` haskell
-doc  <- openURI "http://haskell.org"
+doc  <- openURI "http://google.com"
 ```
 
  Loading from a file:
@@ -29,19 +29,19 @@ doc  <- openURI "file:///tmp/A.hs"
  Loading a HTML page as a list of tags:
 
 ``` haskell
-tags <- openAsTags "http://haskell.org"
+tags <- openAsTags "http://google.com"
 ```
 
  Loading a HTML page as XML:
 
 ``` haskell
-tags <- openAsXML "http://haskell.org"
+tags <- openAsXML "http://google.com"
 ```
 
  Loading an RSS or Atom feed:
 
 ``` haskell
-feed <- openAsFeed "http://haskell.org"
+feed <- openAsFeed "http://google.com"
 ```
 
  These data types can the be processed further with the XML, Feed and
