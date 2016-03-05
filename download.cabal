@@ -16,7 +16,7 @@ bug-reports:     https://github.com/psibi/download/issues
  .
  Loading a webpage as a "ByteString":
  .
- > doc  <- openURI "http://haskell.org"
+ > doc  <- openURI "http://google.com"
  .
  Loading from a file:
  .
@@ -24,15 +24,15 @@ bug-reports:     https://github.com/psibi/download/issues
  .
  Loading a HTML page as a list of tags:
  .
- > tags <- openAsTags "http://haskell.org"
+ > tags <- openAsTags "http://google.com"
  .
  Loading a HTML page as XML:
  .
- > tags <- openAsXML "http://haskell.org"
+ > tags <- openAsXML "http://google.com"
  .
  Loading an RSS or Atom feed:
  .
- > feed <- openAsFeed "http://haskell.org"
+ > feed <- openAsFeed "http://google.com"
  .
  These data types can the be processed further with the XML, Feed and
  TagSoup libraries.
