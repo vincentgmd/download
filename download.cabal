@@ -41,7 +41,7 @@ license-file:    LICENSE
 copyright:       (c) 2008-2011, Don Stewart <dons00@gmail.com>
 author:          Don Stewart
 maintainer:      Sibi Prabakaran <sibi@psibi.in>, Don Stewart <dons00@gmail.com>
-cabal-version:   >= 1.6
+cabal-version:   >= 1.8
 build-type:      Simple
 tested-with:     GHC ==7.10.3
 
@@ -105,3 +105,11 @@ library
                         httperr.h
                         hs_download_utils.h
 
+test-suite test
+    type:          exitcode-stdio-1.0
+    ghc-options:   -Wall
+    main-is:       Spec.hs
+    
+    build-depends:   base >= 4.6 && < 5,
+                     download,
+                     hspec == 2.*
