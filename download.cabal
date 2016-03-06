@@ -1,42 +1,10 @@
 name:            download
-version:         0.3.2.2
+version:         0.3.2.3
 homepage:        https://github.com/psibi/download
 synopsis:        High-level file download based on URLs
 description:     High-level file download based on URLs
 extra-source-files: ChangeLog.md README.md
 bug-reports:     https://github.com/psibi/download/issues
- .
- Download web content as strict bytestring, strings, HTML tags, XML, RSS
- or Atom feeds or JSON, via HTTP, FTP or file protocols, using a URL
- interface.
- .
- Importing the library:
- .                 
- > import Network.Download
- .
- Loading a webpage as a "ByteString":
- .
- > doc  <- openURI "http://google.com"
- .
- Loading from a file:
- .
- > doc  <- openURI "file:///tmp/A.hs"
- .
- Loading a HTML page as a list of tags:
- .
- > tags <- openAsTags "http://google.com"
- .
- Loading a HTML page as XML:
- .
- > tags <- openAsXML "http://google.com"
- .
- Loading an RSS or Atom feed:
- .
- > feed <- openAsFeed "http://google.com"
- .
- These data types can the be processed further with the XML, Feed and
- TagSoup libraries.
- .
 category:        Network
 license:         BSD3
 license-file:    LICENSE
