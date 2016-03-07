@@ -753,11 +753,11 @@ static void
 _http_print_html(FILE *out, FILE *in)
 {
 	size_t len;
-  size_t sz = 1024;
+	size_t sz = 1024;
 	char *line, *p, *q;
 	int comment, tag;
 
-  line = calloc(1024, sizeof(char));
+	line = calloc(1024, sizeof(char));
 	comment = tag = 0;
 	while ((len = getline(&line, &sz, in)) > 0) {
 		while (len && isspace(line[len - 1]))
