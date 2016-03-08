@@ -41,11 +41,6 @@ import Foreign.C.Types
 import Foreign.C.String
 
 import qualified Foreign.Concurrent as C
--- import Control.Monad
--- import Control.Monad.Instances ()
--- import Data.Word
--- import System.IO
--- import System.IO.Unsafe
 import Control.Exception
 
 import qualified Data.ByteString.Internal as S
@@ -72,7 +67,7 @@ import System.IO.Unsafe (unsafePerformIO)
 --
 -- If the file protocol is used, documents will be retrieved from the
 -- local filesystem. If the ftp scheme is used, the FTP protocol
--- (RFC959) is used. If no user name or passoword are provided,
+-- (RFC959) is used. If no user name or password are provided,
 -- anonymous login, with user name 'anonymous' and password 'anonymous'
 -- will be attempted.
 --
@@ -198,7 +193,7 @@ getFile (URL url_fp) flags = do
                      then return Nothing
                      else return $ Just sp)
 
--- ll other functions return a stream pointer which may be used to
+-- all other functions return a stream pointer which may be used to
 -- access the requested document, or NULL if an error occurred.
     --
         (maybe (return ()) c_fclose)
