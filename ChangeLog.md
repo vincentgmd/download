@@ -1,3 +1,7 @@
+## 0.3.2.5
+
+* Add Travis support for GHC 8
+
 ## 0.3.2.4
 
 * Fix C code warnings
