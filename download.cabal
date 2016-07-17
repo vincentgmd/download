@@ -61,6 +61,7 @@ library
                           -D_FILE_OFFSET_BITS=64
                           -D_GNU_SOURCE
                           -UDEBUG
+                          -I /usr/include/
 
     c-sources:          cbits/download.c
                         cbits/common.c
