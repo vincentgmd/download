@@ -48,11 +48,19 @@ library
 --        install-includes:   hs_download_utils.h
 --    else
 
-    cc-options:         -O2
-                        -DINET6
-                        -D_GNU_SOURCE
-                        -D_FILE_OFFSET_BITS=64
-                        -UDEBUG
+    if os(linux)        
+      cc-options:         -O2
+                          -DINET6
+                          -D_GNU_SOURCE
+                          -D_FILE_OFFSET_BITS=64
+                          -UDEBUG
+
+    if os(darwin)
+      cc-options:         -O2
+                          -DINET6
+                          -D_FILE_OFFSET_BITS=64
+                          -D_GNU_SOURCE
+                          -UDEBUG
 
     c-sources:          cbits/download.c
                         cbits/common.c
