@@ -35,6 +35,7 @@ matrix:
 
   allow_failures:
    - env: CABALVER=head GHCVER=head
+   - env: BUILD=stack ARGS="--resolver nightly"
 
 before_install:
 # Using compiler above sets CC to an invalid value, so unset it
