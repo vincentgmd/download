@@ -61,6 +61,9 @@ install:
       gcc --version
       uname -a
       ls /usr/include/
+      find /Applications/Xcode.app -name stdlib.h
+      echo "another"
+      find /Applications/Xcode.app -name libio.h
       stack --no-terminal --install-ghc $ARGS test --bench --only-dependencies
       ;;
     cabal)
