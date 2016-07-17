@@ -12,14 +12,6 @@ sudo: false
 
 matrix:
   include:
-    - env: CABALVER=1.18 GHCVER=7.8.4
-      addons: {apt: {packages: [cabal-install-1.18,ghc-7.8.4], sources: [hvr-ghc]}}
-    - env: CABALVER=1.22 GHCVER=7.10.3
-      addons: {apt: {packages: [cabal-install-1.22,ghc-7.10.3],sources: [hvr-ghc]}}
-    - env: CABALVER=1.24 GHCVER=8.0.1
-      addons: {apt: {packages: [cabal-install-1.24,ghc-8.0.1],sources: [hvr-ghc]}}
-    - env: CABALVER=head GHCVER=head
-      addons: {apt: {packages: [cabal-install-head,ghc-head],  sources: [hvr-ghc]}}
     - env: BUILD=stack ARGS="--resolver lts-6.7"
       compiler: ": #stack 7.10.3 osx"
       os: osx
@@ -28,7 +20,6 @@ matrix:
       os: osx
 
   allow_failures:
-   - env: CABALVER=head GHCVER=head
    - env: BUILD=stack ARGS="--resolver nightly"
 
 before_install:
@@ -69,6 +60,7 @@ install:
     stack)
       gcc --version
       uname -a
+      ls /usr/include/
       stack --no-terminal --install-ghc $ARGS test --bench --only-dependencies
       ;;
     cabal)
