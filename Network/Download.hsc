@@ -36,7 +36,9 @@ module Network.Download (
 
     ) where
 
-import Foreign
+import Foreign.Ptr
+import Foreign.ForeignPtr
+import Foreign.Marshal.Alloc
 import Foreign.C.Types
 import Foreign.C.String
 
@@ -45,6 +47,7 @@ import Control.Exception
 
 import qualified Data.ByteString.Internal as S
 import qualified Data.ByteString.Char8    as Char8
+import Data.Word (Word8)
 
 -- Parsers
 import qualified Text.HTML.TagSoup    as TagSoup

@@ -1,6 +1,9 @@
 import Test.Hspec
 import Network.Download
-import Data.Either (isRight)
+
+-- available in base starting with base-4.6
+isRight :: Either a b -> Bool
+isRight = either (const False) (const True)
 
 main :: IO ()
 main = hspec $ do
