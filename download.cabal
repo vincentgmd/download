@@ -79,6 +79,6 @@ test-suite test
     ghc-options:   -Wall
     main-is:       Spec.hs
     
-    build-depends:   base >= 4.6 && < 5,
+    build-depends:   base >= 4.5 && < 5,
                      download,
                      hspec == 2.*
