@@ -17,9 +17,17 @@ matrix:
       addons: {apt: {packages: [cabal-install-1.24,ghc-8.0.1],sources: [hvr-ghc]}}
     - env: CABALVER=head GHCVER=head
       addons: {apt: {packages: [cabal-install-head,ghc-head],  sources: [hvr-ghc]}}
+    - env: BUILD=stack ARGS="--resolver lts-6.7"
+      compiler: ": #stack 7.10.3 osx"
+      os: osx
+    - env: BUILD=stack ARGS="--resolver nightly"
+      compiler: ": #stack nightly osx"
+      os: osx
 
   allow_failures:
    - env: CABALVER=head GHCVER=head
+   - env: BUILD=stack ARGS="--resolver lts-6.7"
+   - env: BUILD=stack ARGS="--resolver nightly"
 
 before_install:
  - export PATH=/opt/ghc/$GHCVER/bin:/opt/cabal/$CABALVER/bin:$PATH
