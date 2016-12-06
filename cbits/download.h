@@ -34,7 +34,12 @@
 #define DOWNLOAD_H_INCLUDED
 
 #include <stdio.h>
-#include <sys/param.h> /* MAXHOSTNAMELEN */
+
+#if defined(WIN32)
+  #include <windows.h> /* MAXHOSTNAMELEN */
+#else
+  #include <sys/param.h> /* MAXHOSTNAMELEN */
+#endif
 
 #define USER_AGENT_STRING "libdownload/1.0"
 
